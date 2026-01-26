@@ -1,6 +1,6 @@
 <div>
 <p align="center">
-  <img height="20%" width="20%" src="./.eztypr_logo.png">
+  <img height="30%" width="30%" src="./.eztypr_logo.png">
 </p>
 <h2 align="center">Eztypr is an "autotyper" for Google Docs.</h3>
 
