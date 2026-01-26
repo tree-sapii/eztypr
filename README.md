@@ -12,6 +12,7 @@
 #### - Text Highlighting to see which words are affected
 </div>
 <br>
+
 > [!IMPORTANT]
 > This extension is only available for Firefox.
 
