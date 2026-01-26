@@ -1,3 +1,24 @@
+
+class KeySim {
+  script_id_uuid = ""
+
+  injectScript(codeToInject) {
+    if (!this.script_id_uuid) {
+      const script = document.createElement('script');
+      script.id = crypto.randomUUID();
+      script.textContent = `(${codeToInject.toString()})();`;
+      (document.head || document.documentElement).appendChild(script);
+      this.script_id_uuid = script.id;
+    }
+  }
+
+  constructor() {
+    
+  }
+}
+
+
+
 // main.js - This is your content script
 function codeToInject() {
     // ALL YOUR CODE GOES HERE
