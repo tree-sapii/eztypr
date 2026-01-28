@@ -129,6 +129,19 @@ class Popup {
     }
   }
 
+  async requestState() {
+    try {
+      const tabs = await browser.tabs.query({active: true, currentWindow: true});
+      console.log(tabs);
+      
+      browser.tabs.sendMessage(tabs[0].id, {
+        command: "stateRequest",
+    });
+    } catch(error) {
+      console.error("Error:", error);
+    }
+  }
+
   async startTypeClickHandler() {
     this.button.addEventListener("click", async (e) => {
       console.log("click detected");
