@@ -65,16 +65,39 @@ class Popup {
       escapedText.split(/\s+/).forEach(word => {
         const wordobj = {};
         wordobj.originalword = word;
-        if (!word || word == " ") return; // if word is nothing or space
+        if (!word) return; // if word is nothing
+        if (word == " ") { 
+          return { 
+            originalword : " ",
+            filteredWord : "",
+            delay : 10,
+            mistake : false,
+            misspell : false,
+            random : 0
+          }
+        }
 
-        const filteredWord = word.replace(/[.,/#!$%^&*;:{}=\-_`~()"'\[\]]/g, " ").trim();
+        if (word == "\n") {
+          return { 
+            originalword : "\n",
+            filteredWord : "",
+            delay : 10,
+            mistake : false,
+            misspell : false,
+            random : 0
+          }
+        }
+        // get rid of all special chars SURROUNDING the word
+        const filter_regex = /[.,\\/#!$%^&*;:{}=`~()"\[\]]|(?<![a-zA-Z])['\-_]|['\-_](?![a-zA-Z])/g; 
+        const filteredWord = word.length != 1 ? word.replace(filter_regex, " ").trim() : word;
         if (!filteredWord) return; 
+        // if the word has a special char in between its chars, it needs to be included inside the filtered word 
         wordobj.filteredWord = filteredWord;
-        
+
         const random = (Math.floor(Math.random() * 100) + 1);
         const intensity_value = (parseInt(this.mistake_input.value)); 
         //Misspell and Mistake Logic
-        if (random <= intensity_value)  {
+        if (random <= intensity_value && !word.match(filter_regex))  {
           wordobj.mistake = true
         }
         if (this.misspell_check.checked) {
@@ -89,11 +112,12 @@ class Popup {
           wordobj.delay = this.delay_input.value; 
           wordobj.random = Math.floor(Math.random() * (this.random_delay.value - 0 + 1) + 0)
         }
-        
-
+        // minimum 10 ms delay
+        (wordobj.delay + wordobj.random) <= 0 ? wordobj.delay = 10 : {};
         tempWordList.push(wordobj);
       })
       this.wordList = [...new Set(tempWordList)]
+      console.log(JSON.stringify(this.wordList))
   }
 
   updateHighlights2() {
@@ -157,6 +181,22 @@ class Popup {
     });
   }
 
+  state_listener() {
+    const runtime = (typeof browser !== 'undefined') ? browser : chrome;
+
+    runtime.runtime.onMessage.addListener((message, sender) => {
+      // Check for the command we sent from the Content Script
+      if (message.command === "state") {
+        
+        console.log("Background: Received state update from tab", sender.tab?.id);
+        console.log("State Data:", message.state);
+
+        // TODO: Store the state or process it here
+        this.lastKnownState = message.state;
+      }
+    });
+  }
+
 
   constructor() {
     this.mistake_check.addEventListener("change", (e) => {
@@ -208,7 +248,7 @@ class Popup {
     });
 
     this.startTypeClickHandler(); 
-    browser.tabs.executeScript({file: "/main.js"});
+    browser.tabs.executeScript({file: "/pagescript/main.js"});
 
   }
 }
