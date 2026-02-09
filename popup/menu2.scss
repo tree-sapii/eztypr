@@ -1,0 +1,264 @@
+.wrapper {
+  width: 20rem;
+  background-color: #fefeff;
+
+  .title-wrapper {
+    width: 100%;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* just for spacing */
+    margin-bottom: .25rem;
+
+    #instruction {
+      font-family: 'aileron-heavy';
+      font-size: 2rem;
+
+      /* just for spacing */
+      margin-right: .5rem;
+
+      /* we dont want people to highlight the "logo" */
+      user-select: none;
+    }
+
+    #instruction-icon {
+      height: 2.5rem;
+
+      /* we dont want people to highlight the "logo" */
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+  }
+
+  .text-wrapper {
+    display: flex;
+    justify-content: center;
+
+    #text-to-write {
+      width: calc(100% - 12px);
+      height: 8rem;
+      padding: .5rem;
+
+      /* stop user from manually resizing */
+      resize: none !important;
+
+      font-size: .75rem;
+      font-family: 'aileron-semibold';
+
+      border: none;
+      border-radius: .75rem;
+      background-color: #f3f2f2;
+    }
+  }
+
+  .delay-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 2rem;
+
+    margin-top: .5rem;
+    
+    font-size: 1.1rem;
+    font-family: 'aileron-bold';
+  }
+
+  .slider-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    #delay-print {
+      text-align: center;
+
+      color: #4d4d4d;
+      font-family: 'aileron-semibold';
+    }
+  }
+
+  .button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 4rem;
+
+    #start-type {
+      position: relative;
+
+      width: 100%;
+      height: 2.25rem;
+
+      border: none;
+      border-radius: .75rem;
+
+      background-color: #f3f2f2;
+
+      overflow: hidden;
+
+      color: black;
+
+      font-size: 1rem;
+      font-family: 'aileron-semibold';
+    }
+
+    #start-type:hover {
+      color: white;
+    }
+
+    #start-type::after {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      content: "Start Typing";
+      position: absolute;
+
+      inset: 0;
+      background: linear-gradient(
+        45deg,
+        rgba(131, 60, 211, 1) 0%,
+        rgba(57, 37, 174, 1) 100%
+      );
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    #start-type:hover::after {
+      opacity: 1;
+    }
+  }
+
+  .mistake-wrapper {
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+
+    height: 2rem;
+    
+    margin-top: -.25rem;
+
+    font-size: .9rem;
+    font-family: 'aileron-semibold';
+
+    #mistake {
+      margin-right: .25rem;
+      width: 1.5rem;
+    }
+  }
+
+  .mistake-slider {
+    display: flex;
+    align-items: center;
+
+    #mistake-intensity-print {
+      color: #4d4d4d;
+
+      margin-left: .25rem;
+
+      font-size: .85rem;
+      font-family: 'aileron-semibold';
+    }
+  }
+
+  .misspell-wrapper {
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+
+    height: 2rem;
+
+    margin-top: .25rem;
+
+    font-size: .9rem;
+    font-family: 'aileron-semibold';
+
+    #misspell {
+      margin-right: .25rem;
+      width: 1.5rem;
+    }
+  }
+
+  .random-wrapper {
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+
+    height: 2rem;
+
+    margin-top: -.5rem;
+
+    font-size: .9rem;
+    font-family: 'aileron-semibold';
+
+    #random_delay {
+      margin-right: .25rem;
+      width: 1.5rem;
+    }
+  }
+
+  .random-delay-slider {
+    display: flex;
+    align-items: center;
+
+
+    #random-delay-print {
+      color: #4d4d4d;
+
+      margin-left: .25rem;
+
+      font-size: .85rem;
+      font-family: 'aileron-semibold';
+    }
+  }
+
+  #err-dialog {
+    width: 10rem;
+    height: 3rem;
+
+    border: none;
+    border-radius: .75rem;
+    background-color: #e6e5df;
+  }
+
+  .err {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: none
+  }
+}
+
+@font-face {
+  /* aileron is a free to use font, even commercially */
+  font-family: 'aileron-heavy';
+  /* absolute paths dont work here for some reason? */
+  src: url('../assets/font/aileron-heavy.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  /* aileron is a free to use font, even commercially */
+  font-family: 'aileron-bold';
+  /* absolute paths dont work here for some reason? */
+  src: url('../assets/font/aileron-bold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  /* aileron is a free to use font, even commercially */
+  font-family: 'aileron-semibold';
+  /* absolute paths dont work here for some reason? */
+  src: url('../assets/font/aileron-semibold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
