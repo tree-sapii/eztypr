@@ -51,6 +51,7 @@
 
       <!-- Controls Section -->
       <div class="flex flex-col items-center gap-2 py-4 border-b border-slate-200/70">
+<<<<<<< HEAD
         <div class="delay-wrapper">
           <span class="delay-text">Delay per keypress</span>
         </div>
@@ -69,6 +70,21 @@
             class="w-[95%] h-2 cursor-pointer accent-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-full"
           > 
         </div>
+=======
+        <span class="text-center text-sm text-slate-800 font-medium">Enter the delay per keypress (sec)</span>
+        <span id="delay-print" class="text-center text-sm font-bold text-blue-700">0 milliseconds</span>
+
+        <!-- Input Range -->
+        <input
+          id="delay-input"
+          type="range"
+          min="0"
+          max="200"
+          value="0"
+          step="1"
+          class="w-[95%] h-2 cursor-pointer accent-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-full"
+        >
+>>>>>>> parent of f4a82e1 (Fixed everything regarding the mistake logic and lil cleanup)
       </div>
 
       <!-- Button -->
