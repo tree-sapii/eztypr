@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    "./menu.html",
+    "./menu2.html",
   ],
   safelist: ["bg-[#0e6d79]"],
   theme: {
