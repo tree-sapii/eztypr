@@ -64,10 +64,10 @@ class Popup {
       let escapedText = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
       escapedText.split(/\s+/).forEach(word => {
         const wordobj = {};
-        wordobj.originalword = word;
+        wordobj.original = word;
         if (!word || word == " ") return; // if word is nothing or space
 
-        const filteredWord = word.replace(/[.,/#!$%^&*;:{}=\-_`~()"'\[\]]/g, " ").trim();
+        const filteredWord = word.length != 1 ? word.replace(/[.,/#!$%^&*;:{}=_`~()"\[\]]/g, " ").trim() : word;
         if (!filteredWord) return; 
         wordobj.filteredWord = filteredWord;
         
