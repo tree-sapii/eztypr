@@ -14,9 +14,9 @@
 #### - Adding random delay to each character typed
 #### - Text Highlighting to see which words are affected
 #### - Adding pauses to typing to simulate taking breaks
-![GitHub License](https://img.shields.io/github/license/FBIGlowie/eztypr)
-![GitHub language count](https://img.shields.io/github/languages/count/FBIGlowie/eztypr)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/FBIGlowie/eztypr)
+![GitHub License](https://img.shields.io/github/license/tree-sapii/eztypr)
+![GitHub language count](https://img.shields.io/github/languages/count/tree-sapii/eztypr)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/tree-sapii/eztypr)
 </div>
 <br><br>
 
@@ -34,6 +34,14 @@ Download from the Mozilla Addon Page at [Still in the works]()
 - Click `Load Temporary Add-on...`, this will open your systems default file manager.
 - Nagivate to the directory you cloned this repository and select the file `manifest.json`
 - It should be loaded now
+</div>
+
+<div>
+
+## Why over other extensions?
+Compared to more known options like Duey.ai, Eztypr is **free** and **open source**, **no subscription** needed. It gives you a lot more control over the typing pattern with the many **new options**. **No telemetry**, we will never collect any of your data, you can be assured of this by checking out what the code does.
+
+  
 </div>
 
 ## How does it work?
