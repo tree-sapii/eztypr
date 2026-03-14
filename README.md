@@ -13,6 +13,7 @@
 #### - Misspelling long words ( > 6 letters )
 #### - Adding random delay to each character typed
 #### - Text Highlighting to see which words are affected
+#### - Adding pauses to typing to simulate taking breaks
 ![GitHub License](https://img.shields.io/github/license/FBIGlowie/eztypr)
 ![GitHub language count](https://img.shields.io/github/languages/count/FBIGlowie/eztypr)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/FBIGlowie/eztypr)
@@ -41,7 +42,7 @@ Download from the Mozilla Addon Page at [Still in the works]()
 sequenceDiagram
 autonumber
 create participant B as Background
-create participant C as Context
+create participant C as Content
 B->>C:browser.tabs.sendMessage(wordlist)
 Note over C,B: Send wordlist to content script
 
