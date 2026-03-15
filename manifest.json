@@ -18,6 +18,14 @@
   "icons": {
     "32": "./.eztypr_logo_small.png",
     "64": "./.eztypr_logo_small_64.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@e0681d76-2029-11f1-b3aa-53e3adc9bb3a",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
   }
 }
 

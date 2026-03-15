@@ -26,7 +26,7 @@
 <div>
   
 ## Instalation
-Download from the Mozilla Addon Page at [Still in the works]()
+Download from the [Mozilla Addon Page](https://addons.mozilla.org/en-US/firefox/addon/eztypr/)
 ### Manual/Debug Instalation
 - Clone the repository to a local directory `git clone https://github.com/FBIGlowie/eztypr.git`
 - Go to your browser's `about:debugging`, check the `This Firefox` button bellow the `Setup` button.
