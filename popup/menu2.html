@@ -21,7 +21,7 @@
         </p>
 
         <!-- HIGHLIGHTING CONTAINER START -->
-        <div class="relative w-[98%] mx-auto my-[2%] h-[250px]">
+        <div class="relative w-[98%] mx-auto my-[1%] h-[250px]">
           <!-- Backdrop (Highlights) -->
           <div
             id="backdrop"
@@ -62,7 +62,7 @@
       </dialog>
 
       <!-- Controls Section -->
-      <div class="flex flex-col items-center gap-2 py-4 border-b border-slate-200/70">
+      <div class="flex flex-col items-center gap-2 py-1">
         <span class="text-center text-sm text-slate-800 font-medium">Enter the delay per keypress (sec)</span>
         <span id="delay-print" class="text-center text-sm font-bold text-blue-700">30 milliseconds</span>
 
@@ -149,7 +149,7 @@
               type="range"
               class="h-2 flex-1 cursor-pointer accent-yellow-300 rounded-full"
               min="0"
-              max="2000"
+              max="500"
               value="0"
             >
             <span class="text-xs text-slate-700 font-medium min-w-fit" id="pause-freq-print">0 words</span>
@@ -168,7 +168,7 @@
               type="range"
               class="h-2 flex-1 cursor-pointer accent-yellow-300 rounded-full"
               min="0"
-              max="120"
+              max="30"
               value="0"
             >
             <span class="text-xs text-slate-700 font-medium min-w-fit" id="pause-dur-print">0 minutes</span>
