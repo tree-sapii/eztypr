@@ -21,7 +21,7 @@
         </p>
 
         <!-- HIGHLIGHTING CONTAINER START -->
-        <div class="relative w-[98%] mx-auto my-[3%] h-[250px]">
+        <div class="relative w-[98%] mx-auto my-[2%] h-[250px]">
           <!-- Backdrop (Highlights) -->
           <div
             id="backdrop"
@@ -48,7 +48,7 @@
       >
         <div class="min-h-full grid place-items-center p-4">
           <div class="max-w-md rounded-lg bg-white p-6 shadow-2xl border border-slate-200">
-            <p class="text-sm text-slate-900 font-medium">Need input</p>
+            <p class="text-sm text-slate-900 font-medium" id="err-dialog-content">Need input</p>
 
             <form method="dialog" class="mt-4 flex">
               <button
@@ -109,7 +109,7 @@
         </div>
 
         <!-- Option 2 -->
-        <div class="block">
+        <div class="block hidden">
           <label class="flex items-center cursor-pointer group">
             <input type="checkbox" id="misspell" class="w-4 h-4 cursor-pointer accent-blue-600">
             <span class="ml-2 text-slate-800 group-hover:text-slate-950 font-medium">
@@ -136,6 +136,45 @@
             <span class="text-xs text-slate-700 font-medium min-w-fit" id="random-delay-print">0 seconds</span>
           </div>
         </div>
+
+        <!-- Option 4 -->
+        <div class="block">
+          <label class="flex items-center cursor-pointer group">
+            <input type="checkbox" id="pause-freq" class="w-4 h-4 cursor-pointer accent-blue-600">
+            <span class="ml-2 text-slate-800 group-hover:text-slate-950 font-medium">Pause after how many words</span>
+          </label>
+          <div class="flex items-center space-x-2 hidden mt-2 ml-6" id="pause-freq-slider">
+            <input
+              id="pause-freq-input"
+              type="range"
+              class="h-2 flex-1 cursor-pointer accent-yellow-300 rounded-full"
+              min="0"
+              max="2000"
+              value="0"
+            >
+            <span class="text-xs text-slate-700 font-medium min-w-fit" id="pause-freq-print">0 words</span>
+          </div>
+        </div>
+
+        <!-- Option 5 -->
+        <div class="block">
+          <label class="flex items-center cursor-pointer group">
+            <input type="checkbox" id="pause-dur" class="w-4 h-4 cursor-pointer accent-blue-600">
+            <span class="ml-2 text-slate-800 group-hover:text-slate-950 font-medium">How long the pauses should be</span>
+          </label>
+          <div class="flex items-center space-x-2 hidden mt-2 ml-6" id="pause-dur-slider">
+            <input
+              id="pause-dur-input"
+              type="range"
+              class="h-2 flex-1 cursor-pointer accent-yellow-300 rounded-full"
+              min="0"
+              max="120"
+              value="0"
+            >
+            <span class="text-xs text-slate-700 font-medium min-w-fit" id="pause-dur-print">0 minutes</span>
+          </div>
+ 
+
       </div>
     </div>
 
